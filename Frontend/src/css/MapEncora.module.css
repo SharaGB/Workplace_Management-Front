@@ -1,0 +1,6 @@
+.map_encora {
+    background-image: url(../assets/imgs/map_encora.png);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    height: 700px;
+}

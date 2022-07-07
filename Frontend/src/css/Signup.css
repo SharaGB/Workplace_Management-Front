@@ -1,0 +1,145 @@
+.login-block {
+    background: #ADE6D0;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #F1F0CF, #ADE6D0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #EBCEED, #C7CEEA);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    float: left;
+    width: 100%;
+    padding: 50px 0;
+}
+
+.banner-sec {
+    background: url(https://media-exp2.licdn.com/dms/image/C5616AQH1L6kklL33zw/profile-displaybackgroundimage-shrink_350_1400/0/1643647082769?e=1661990400&v=beta&t=m3PEFAu4xZEBfRufanjXmNPu5vlp4FXS4GBwRdW6SKY) no-repeat left bottom;
+    background-size: 90%;
+    min-height: 500px;
+    border-radius: 0 5px 5px 0;
+    padding: 0px;
+}
+
+.my_container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
+    padding: 0px 0px 0px 5px;
+}
+
+.carousel-inner {
+    border-radius: 0 10px 10px 0;
+}
+
+.carousel-caption {
+    text-align: left;
+    left: 5%;
+}
+
+.login-sec {
+    padding: 50px 30px;
+    position: relative;
+}
+
+.login-sec .copy-text {
+    position: absolute;
+    width: 80%;
+    bottom: 20px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.login-sec .copy-text i {
+    color: #C7CEEA;
+}
+
+.login-sec .copy-text a {
+    color: #C7CEEA;
+}
+
+.login-sec h2 {
+    margin-bottom: 30px;
+    font-weight: 800;
+    font-size: 30px;
+    color: #000000;
+}
+
+.login-sec h2:after {
+    content: " ";
+    width: 100px;
+    height: 5px;
+    background: #3bace0;
+    display: block;
+    margin-top: 20px;
+    border-radius: 3px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.btn-login {
+    background: #000000;
+    color: #fff;
+    font-weight: 600;
+    float: center;
+    border-radius: 5px;
+}
+
+.form-check {
+    margin: 30px 85px 1px;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1600px) {
+    .banner-text {
+        width: 80%;
+        position: absolute;
+        bottom: 130%;
+        left: -20%;
+        padding-left: 0px;
+        text-align: justify;
+        text-justify: distribute;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .banner-text {
+        width: 80%;
+        position: absolute;
+        bottom: 85%;
+        left: -20%;
+        padding-left: 0px;
+        text-align: justify;
+        text-justify: distribute;
+    }
+}
+
+.banner-text h2 {
+    color: #fff;
+    font-weight: 600;
+    bottom: 4vw;
+}
+
+.banner-text h2:after {
+    content: " ";
+    width: 100px;
+    height: 5px;
+    background: #FFF;
+    display: block;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+.banner-text p {
+    color: #fff;
+}
+
+.text-uppercase {
+    line-height: 100%;
+}
+
+.form-group {
+    line-height: 250%;
+}
+
+.links2 {
+    color: #000000;
+    line-height: 250%;
+}

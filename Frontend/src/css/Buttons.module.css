@@ -1,0 +1,90 @@
+/* From uiverse.io by @alexmaracinaru */
+.btn {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    text-decoration: none;
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #089ee9;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+}
+
+.btn span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff8f8;
+}
+
+.btn svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.btn:hover:before {
+    width: 100%;
+    background: #2aacd3;
+}
+
+.btn:hover svg {
+    transform: translateX(0);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/*========= Form Buttons and gerais ========*/
+
+.FormButton {
+    margin: 10px 4px 0 4px;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+        rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #3c4043;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    letter-spacing: 0.25px;
+    line-height: normal;
+    padding: 11px 24px;
+    transition: background box-shadow 280ms ease;
+}
+
+.FormButton:hover {
+    background: #f6f9fe;
+    color: #174ea6;
+}
+
+.FormButton :active {
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%),
+        0 8px 12px 6px rgb(60 64 67 / 15%);
+    outline: none;
+    border: 2px solid #4285f4;
+}

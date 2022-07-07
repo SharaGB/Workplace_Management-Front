@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c79629e4.css",
+    "main.js": "/static/js/main.440d7c42.js",
+    "static/media/office.jpg": "/static/media/office.fb08400ab118195c91c0.jpg",
+    "static/media/desktops.jpg": "/static/media/desktops.fe2893aaa34457793bbc.jpg",
+    "static/media/background-image.jpg": "/static/media/background-image.c47f3199d2c706117c36.jpg",
+    "static/media/logo.png": "/static/media/logo.23851b14f05675b21254.png",
+    "static/media/encorapurple.PNG": "/static/media/encorapurple.596ef131743188a3ef60.PNG",
+    "index.html": "/index.html",
+    "main.c79629e4.css.map": "/static/css/main.c79629e4.css.map",
+    "main.440d7c42.js.map": "/static/js/main.440d7c42.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c79629e4.css",
+    "static/js/main.440d7c42.js"
+  ]
+}
