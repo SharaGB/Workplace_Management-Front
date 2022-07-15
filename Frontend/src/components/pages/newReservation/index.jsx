@@ -90,13 +90,13 @@ const Newreservation = () => {
               <Card style={{ width: "18rem" }} className={styles.card}>
                 <Card.Img variant="top" src={stationSelected.image} />
                 <Card.Body>
-                  <Card.Title>{stationSelected.name}</Card.Title>
+                  <Card.Title>Name</Card.Title>
                   <Card.Text>
                     <strong>Reserve day: </strong>
                     <ShowDateReservation reservation={newReservation} />
                   </Card.Text>
                   <Card.Text>
-                    <strong>Desk: </strong> {stationSelected.id}
+                    <strong>Desk: </strong> {stationSelected}
                   </Card.Text>
                   <FormButton text="Confirm" handleClick={e => handleSubmit(e)} />
                   <FormButton

@@ -9,10 +9,6 @@ import NavBar from '../../../services/Navbar';
 
 const baseURL = 'http://localhost:8000/api/reservation/';
 
-// export const getMyBookings = async (email) => {
-//   return await axios.get(baseURL, email)
-// }
-
 const Myreservations = () => {
   const [showMsg, setShowMsg] = useState(false);
   const [bookings, setBookings] = useState([]);
@@ -20,7 +16,7 @@ const Myreservations = () => {
   const [errorMsg, setErrorMsg] = useState('')
 
   let msg = null;
-  let location = useLocation();
+  let location = useLocation(); /* Returns the current location object */
   if (location.state) {
     msg = location.state.message;
   }
@@ -31,20 +27,21 @@ const Myreservations = () => {
 
     try {
       const get = async () => {
-        const userId = JSON.parse(localStorage.getItem('user_id'));
-        axios.get(baseURL)
-        if (bookings.data.length === 0) {
-          setErrorMsg('no bookings made by you')
-          setIsLoading(false)
+        axios.get(baseURL).then(res => {
+          console.log(res.data)
+        if (res.data.length === 0) { /* If no reservations have been made */
+          setErrorMsg('No bookings made by you')
+          setIsLoading(true)
           return
         }
-        setBookings(bookings.data);
+        setBookings(res.data);
+      })
         setIsLoading(false)
       };
       get();
 
     } catch (error) {
-      setErrorMsg('some error occurred while fetching the information')
+      setErrorMsg('Some error occurred while fetching the information')
     }
 
     setTimeout(() => {
@@ -66,7 +63,7 @@ const Myreservations = () => {
         )}
         {errorMsg && <Alert variant='danger'>{errorMsg}</Alert>}
         {bookings.map(booking => {
-          return <MyReservationList key={booking._id} bookings={booking} />;
+          return <MyReservationList key={booking.id} bookings={booking} />;
         })}
       </Container>
     </div>

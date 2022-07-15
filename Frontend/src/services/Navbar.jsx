@@ -30,7 +30,7 @@ class NavBar extends Component {
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className={styles.navbar}>
         <Container>
-          <Link to={"/encora_map"}>
+          <Link to={"/homepage"}>
             <Navbar.Brand>
               <img src={logo} alt="logotype" />
               Encora reserves
@@ -45,6 +45,11 @@ class NavBar extends Component {
                   Admin
                 </Link>
               ) : null}
+            </Nav>
+            <Nav>
+              <Link className={styles.navbar_target} to={"/encora_map"}>
+                Map Workspace
+              </Link>
             </Nav>
             <Nav>
               <Link className={styles.navbar_target} to={"/homepage"}>

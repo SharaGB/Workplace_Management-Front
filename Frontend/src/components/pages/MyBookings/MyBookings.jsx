@@ -9,8 +9,6 @@ import { FormButton } from "../../../services/Buttons";
 
 const baseURL = `http://localhost:8000/api/reservation/${localStorage.getItem('user_id')}`
 
-console.log(baseURL)
-
 
 export const getStation = async (name) => {
   return await axios.get(baseURL).then((response) => {
@@ -19,7 +17,7 @@ export const getStation = async (name) => {
 }
 
 export const deleteBooking = async (id) => {
-  return await axios.delete(baseURL)
+  return await axios.delete(`http://localhost:8000/api/reservation/${id}/`)
 }
 
 export const MyReservationList = ({ bookings }) => {
@@ -27,24 +25,20 @@ export const MyReservationList = ({ bookings }) => {
   const [stationSelected, setStationSelected] = useState();
   const [showModal, setShowModal] = useState(false);
 
-  const date = new Date(bookings.startDate).toLocaleDateString();
-  const hour = new Date(bookings.startDate)
+  const date = new Date(bookings.start_date).toLocaleDateString(); /* Returns a string with representation of the date */
+  const hour = new Date(bookings.start_date)
     .getHours()
     .toString()
-    .padStart(2, "0");
-  const minutes = new Date(bookings.startDate)
+  const minutes = new Date(bookings.start_date)
     .getMinutes()
     .toString()
-    .padStart(2, "0");
 
-  const hourFinal = new Date(bookings.finalDate)
+  const hourFinal = new Date(bookings.end_date)
     .getHours()
     .toString()
-    .padStart(2, "0");
-  const minutesFinal = new Date(bookings.finalDate)
+  const minutesFinal = new Date(bookings.end_date)
     .getMinutes()
     .toString()
-    .padStart(2, "0");
 
   const handleClick = async (e, stationName) => {
     e.preventDefault();
@@ -59,8 +53,8 @@ export const MyReservationList = ({ bookings }) => {
 
   const handleConfirmClick = async bookings => {
     try {
-      await deleteBooking(bookings._id);
-      console.log("reserva deletado com sucesso");
+      await deleteBooking(bookings.id);
+      console.log("Reservation successfully eliminated");
       document.location.reload();
     } catch (error) {
       console.log(error);
@@ -74,7 +68,7 @@ export const MyReservationList = ({ bookings }) => {
         <ListGroup className={styles.area_booking}>
           <ListGroup.Item>
             <span>
-              <strong>{bookings.stationName}: </strong>
+              <strong>Desktop {bookings.desktop}: </strong>
               {date} from {hour}:{minutes} to {hourFinal}:{minutesFinal}
             </span>
             <FormButton text="delete" handleClick={() => setShowModal(true)} />

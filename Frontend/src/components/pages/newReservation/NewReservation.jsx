@@ -71,11 +71,12 @@ export const finalTime = (newReservation, e, setNewReservation) => {
 export const verifyAvailable = async (e, newReservation, setStationsAvailable, setShowPickStationAvailable) => {
   e.preventDefault();
   const initialDate = (newReservation.startDate);
-  const endDate = new Date(newReservation.finalDate);
+  const endDate = newReservation.finalDate;
   const stations = await availableStations({
     startDate: initialDate,
     finalDate: endDate,
   });
+  console.log(stations.data)
   setStationsAvailable(stations.data);
   setShowPickStationAvailable(true);
 };
@@ -89,11 +90,8 @@ export const handlePickSelected = (event, station, setStationSelected, setShowPi
 
 export const ShowDateReservation = ({ reservation }) => {
   const initialDate = new Date(reservation.startDate).toLocaleDateString();
-  const startHour = new Date(reservation.startDate).getHours().toString().padStart(2, '0');
+  const startHour = new Date().getHours().toString().padStart(2, '0');
   const startMinutes = new Date(reservation.startDate).getMinutes().toString().padStart(2, '0');
 
-  const endHours = new Date(reservation.finalDate).getHours().toString().padStart(2, '0');
-  const endMinutes = new Date(reservation.finalDate).getMinutes().toString().padStart(2, '0');
-
-  return `${initialDate} from ${startHour}:${startMinutes} to ${endHours}:${endMinutes}`;
+  return `${initialDate} from ${startHour}:${startMinutes} to ${reservation.finalDate}`;
 };
